@@ -1,0 +1,7 @@
+az sql server create --admin-user petclinic --admin-password petclinic123$ --name petclinic --resource-group petclinic-rg --location eastus
+     
+az sql server firewall-rule create --server petclinic --name allAzureIPs --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0 --resource-group petclinic-rg
+
+az sql server firewall-rule create --server petclinic --name myDevBox --start-ip-address <your_client_ip> --end-ip-address <your_client_ip> --resource-group petclinic-rg
+
+az sql db create --name petclinic --server petclinic --resource-group petclinic-rg

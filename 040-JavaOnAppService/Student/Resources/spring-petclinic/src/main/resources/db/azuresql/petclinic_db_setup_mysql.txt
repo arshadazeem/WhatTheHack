@@ -1,0 +1,19 @@
+================================================================================
+===        Spring PetClinic sample application - AzureSQL Configuration         ===
+================================================================================
+
+@author Arshad Azeem
+
+--------------------------------------------------------------------------------
+
+1) Create an AzureSQL database from the portal or any other mechanisms.
+
+2) (One time only) Run schema.sql script under src/main/resources/db/azuresql/dbscripts to create database schema
+
+3) (One time only) Run the data.sql script under src/main/resources/db/azuresql/dbscripts to insert test records into the database
+
+4) Run the app with `spring.profiles.active=azuresql` (e.g. as a System property via the command
+   line, but any way that sets that property in a Spring Boot app should work).
+
+N.B. the "petclinic" database has to exist for the app to work with the JDBC URL value
+as it is configured by default. 
