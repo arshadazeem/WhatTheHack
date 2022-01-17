@@ -6,7 +6,7 @@
 
 --------------------------------------------------------------------------------
 
-1) Create an AzureSQL database from the portal or any other mechanisms.
+1) Create an AzureSQL database from the portal or any other mechanisms (Add IP addresses of your machine and/or azure-query-explorer to the Database firewall settings to ensure connectivity from your client machines to the server).
 
 2) (One time only) Run schema.sql script under src/main/resources/db/azuresql/dbscripts to create database schema.
 
