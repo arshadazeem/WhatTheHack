@@ -8,12 +8,19 @@
 
 1) Create an AzureSQL database from the portal or any other mechanisms.
 
-2) (One time only) Run schema.sql script under src/main/resources/db/azuresql/dbscripts to create database schema
+2) (One time only) Run schema.sql script under src/main/resources/db/azuresql/dbscripts to create database schema.
 
-3) (One time only) Run the data.sql script under src/main/resources/db/azuresql/dbscripts to insert test records into the database
+3) (One time only) Run the data.sql script under src/main/resources/db/azuresql/dbscripts to insert test records into the database.
 
 4) Run the app with `spring.profiles.active=azuresql` (e.g. as a System property via the command
    line, but any way that sets that property in a Spring Boot app should work).
+   
+   E.g:
+   
+   mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=azuresql -DAZSQL_URL=jdbc:sqlserver://<your_dbservername>.database.windows.net:1433;database=<your_dbname> -DAZSQL_USER=<your_db_admin_user> -DAZSQL_PASS=<your_db_password>"
+
+*The SQL_URL in the above command can be found from the Azure Portal's SQL Database page under 
+Settings --> Connection Strings --> JDBC
 
 N.B. the "petclinic" database has to exist for the app to work with the JDBC URL value
 as it is configured by default. 
