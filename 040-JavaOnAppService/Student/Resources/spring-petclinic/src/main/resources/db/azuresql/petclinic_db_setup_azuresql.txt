@@ -17,10 +17,13 @@
    
    E.g:
    
-   mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=azuresql -DAZSQL_URL=jdbc:sqlserver://<your_dbservername>.database.windows.net:1433;database=<your_dbname> -DAZSQL_USER=<your_db_admin_user> -DAZSQL_PASS=<your_db_password>"
+   	mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=azuresql -DAZSQL_URL=jdbc:sqlserver://<your_dbservername>.database.windows.net:1433;database=<your_dbname> -DAZSQL_USER=<your_db_admin_user> -DAZSQL_PASS=<your_db_password>"
 
-*The SQL_URL in the above command can be found from the Azure Portal's SQL Database page under 
-Settings --> Connection Strings --> JDBC
+	*The SQL_URL in the above command can be found from the Azure Portal's SQL Database page under 
+	Settings --> Connection Strings --> JDBC
 
-N.B. the "petclinic" database has to exist for the app to work with the JDBC URL value
-as it is configured by default. 
+	N.B. the "petclinic" database has to exist for the app to work with the JDBC URL value
+	as it is configured by default. 
+
+5)  When you deploy to App Service, make sure to add the following Application Settings
+    AZSQL_USER, AZSQL_PASS, AZSQL_URL, JAVA_OPTS with value -Dspring.profiles.active=azuresql
