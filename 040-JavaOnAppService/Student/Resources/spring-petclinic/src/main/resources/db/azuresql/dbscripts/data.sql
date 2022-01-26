@@ -10,7 +10,6 @@ INSERT [dbo].[vets] ([id], [first_name], [last_name]) VALUES (6, 'Sharo', 'Jenki
 
 SET IDENTITY_INSERT [dbo].[vets] OFF 
 
-
 GO
 SET IDENTITY_INSERT [dbo].[specialties] ON 
 
